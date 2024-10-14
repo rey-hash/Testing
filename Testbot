@@ -28,16 +28,6 @@ def echo_all(message):
 
 
 
-
-
-@bot.message_handler(commands=[ ‘settings’ ])
-
-   Def settings_command(message):
-
-       Bot.reply_to(message, “You can modify your settings here. What would you like to change?”)
-
-
-
 @bot.message_handler(commands=[‘contact’])
 
    Def contact_command(message):
