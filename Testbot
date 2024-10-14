@@ -30,7 +30,7 @@ def echo_all(message):
 
 
 
-@bot.message_handler(commands=[‘settings’])
+@bot.message_handler(commands=[ ‘settings’ ])
 
    Def settings_command(message):
 
