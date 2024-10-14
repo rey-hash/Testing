@@ -1,0 +1,116 @@
+import telebot
+
+bot = telebot.TeleBot("7886490291:AAHHKnDyCs_WZb36I43Vg3WcSZNG8M-fdRo")
+
+@bot.message_handler(commands=['start'])
+def start(message): 
+ bot.reply_to(message, "Welcome! How can I assist you today?")
+
+@bot.message_handler(commands=['help'])
+def help(message):
+ bot.reply_to(message, "Type / to see avaliable command.")
+
+
+
+@bot.message_handler(commands=['info'])
+
+def info(message):
+
+	bot.reply_to(message, "This bot was created by @Ivanbgo on October 1,2024")
+
+
+
+@bot.message_handler(func=lambda message: True)
+
+def echo_all(message):
+
+	bot.reply_to(message, "Contact admin?")
+
+
+
+
+
+@bot.message_handler(commands=[‘settings’])
+
+   Def settings_command(message):
+
+       Bot.reply_to(message, “You can modify your settings here. What would you like to change?”)
+
+
+
+@bot.message_handler(commands=[‘contact’])
+
+   Def contact_command(message):
+
+       Bot.reply_to(message, “You can contact us at support@example.com for any assistance.”)
+
+
+
+
+
+@bot.message_handler(commands=[‘feedback’])
+
+   Def feedback_command(message):
+
+       Bot.reply_to(message, “Please share your feedback with us!”)
+
+
+
+
+
+@bot.message_handler(commands=[‘latestnews’])
+
+   Def latestnews_command(message):
+
+       Bot.reply_to(message, “Here are the latest updates: [news details].”)
+
+
+
+@bot.message_handler(commands=[‘quote’])
+
+   Def quote_command(message):
+
+       Bot.reply_to(message, “Here’s a motivational quote: ‘Believe you can and you’re halfway there.’”)
+
+
+
+@bot.message_handler(commands=[‘joke’])
+
+   Def joke_command(message):
+
+       Bot.reply_to(message, “Why did the scarecrow win an award? Because he was outstanding in his field!”)
+
+
+
+@bot.message_handler(commands=[‘weather’])
+
+   Def weather_command(message):
+
+       Bot.reply_to(message, “Please provide your location to get the current weather.”)
+
+
+
+@bot.message_handler(commands=[‘bye’])
+
+
+
+    Def bye_command(message):
+
+
+
+        Bot.reply_to(message, “Goodbye! Have a great day!”)
+
+
+
+
+
+
+
+
+
+
+
+
+
+bot.infinity_polling()
+
