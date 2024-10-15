@@ -17,7 +17,7 @@ def info(message):
 
 @bot.message_handler(commands=['settings'])
 def settings(message):
-	bot.reply_to(message, "Here are the settings what you wantto change to")
+	bot.reply_to(message, "Here are the settings what you want to change")
 
 @bot.message_handler(commands=['change_language'])
 def change_language(message):
@@ -26,7 +26,7 @@ def change_language(message):
 @bot.message_handler(commands=['Myanmar/myanmar'])
 def Myanmar(message):
 	bot.reply_to(message, "Done! You haved changed language to Myanmar.")
-&bot.reply_to(message, "မင်္ဂလာပါ၊ Bot မှကြိုဆိုပါတယ်။ ဘာများကူညီပေးရပါမလဲခင်ဗျ")
+&bot.reply_to(message, "မင်္ဂလာပါ၊ Bot မှကြိုဆိုပါတယ်။ ဘာများကူညီပေးရမလဲခင်ဗျ")
 
 @bot.message_handler(commands=['Bot အကြောင်းသိချင်ပါတယ်'])
 def Botအကြောင်းသိချင်ပါတယ်(message):
