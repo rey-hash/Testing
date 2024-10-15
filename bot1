@@ -45,7 +45,7 @@ def handle_message(message):
         bot.send_message(message.chat.id, "Please choose in option:", reply_markup=keyboard)
         keyboard.add(KeyboardButton('Services'))
         keyboard.add(KeyboardButton('Available'))
-        keyboard.add(KeyboardButton('Archieved')
+        keyboard.add(KeyboardButton('Archieved'))
         keyboard.add(KeyboardButton('Main Menu'))
 
     elif 'Services' in message.text:
