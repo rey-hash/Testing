@@ -37,7 +37,9 @@ def BotServices(message):
 	bot.reply_to(message, "Now, only support bot command &reply message.")
 
 
-
+@bot.message_handler(message=['subscribe'])
+def subscribe(message):
+	bot.reply_to(message, "https://t.me/+aKFy0yMQXSBlZWM1")
 
 
 
