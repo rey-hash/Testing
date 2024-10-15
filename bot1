@@ -27,7 +27,7 @@ def change_language(message):
 def Myanmar(message):
 	bot.reply_to(message, "Done! You haved changed language to Myanmar.မင်္ဂလာပါ၊ Bot မှကြိုဆိုပါတယ်။ ဘာများကူညီပေးရမလဲခင်ဗျ")
 
-@bot.message_handler(commands=['Bot အကြောင်းသိချင်ပါတယ်'])
+@bot.message_handler(commands=['BotInfo'/'AboutBot'])
 def Botအကြောင်းသိချင်ပါတယ်(message):
 	bot.reply_to(message, "ယခု Bot အား Admin/Owner ***** မှ ဖန်တီးထားပြီး၊ အမျိုးမျိုးသော လုပ်ဆောင်ချက်များ လုပ်ဆောင်ရန် အကူအညီပေးခြင်း၊ လမ်းညွန်ပေးခြင်းများ၊ ကိုယ်ပိုင်လုပ်ငန်းများလုပ်ဆောင်နိုင်ရန်၊ Bot services များတစ်ချို့အားလည်း ပြန်လည်မျှဝေနိုင်ရန် ရည်ရွယ်ပါသည်။")
 
