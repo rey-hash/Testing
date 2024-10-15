@@ -18,4 +18,28 @@ def info(message):
 def echo_all(message):
 	bot.reply_to(message, "Contact admin?")
 
+@bot.message_handler(commands=['settings'])
+def settings(message):
+	bot.reply_to(message, "Here are the settings what you wantto change to")
+
+@bot.message_handler(commands=['change_language'])
+def change_language(message):
+	bot.reply_to(message, "This bot only support languages(English&Myanmar)")
+
+@bot.message_handler(commands=['Myanmar'])
+def Myanmar(message):
+	bot.reply_to(message, "Done! You haved changed language to Myanmar.")
+
+@bot.message_handler(commands=['Myanmar'])
+def Myanmar(message):
+	bot.reply_to(message, "မင်္ဂလာပါ၊ Bot မှကြိုဆိုပါတယ်။ ဘာများကူညီပေးရပါမလဲခင်ဗျ")
+
+@bot.message_handler(commands=['Bot အကြောင်းသိချင်ပါတယ်'])
+def Botအကြောင်းသိချင်ပါတယ်(message):
+	bot.reply_to(message, "ယခု Bot အား Admin/Owner ***** မှ ဖန်တီးထားပြီး၊ အမျိုးမျိုးသော လုပ်ဆောင်ချက်များ လုပ်ဆောင်ရန် အကူအညီပေးခြင်း၊ လမ်းညွန်ပေးခြင်းများ၊ ကိုယ်ပိုင်လုပ်ငန်းများလုပ်ဆောင်နိုင်ရန်၊ Bot services များတစ်ချို့အားလည်း ပြန်လည်မျှဝေနိုင်ရန် ရည်ရွယ်ပါသည်။")
+
+@bot.message_handler(commands=['BotServices'])
+def BotServices(message):
+	bot.reply_to(message, "Now, only support bot command &reply message.")
+
 bot.infinity_polling()
