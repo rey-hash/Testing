@@ -14,9 +14,6 @@ def help(message):
 def info(message):
 	bot.reply_to(message, "This bot was created by @Ivanbgo on October 1,2024")
 
-@bot.message_handler(func=lambda message: True)
-def echo_all(message):
-	bot.reply_to(message, "Contact admin?")
 
 @bot.message_handler(commands=['settings'])
 def settings(message):
@@ -41,5 +38,16 @@ def Botအကြောင်းသိချင်ပါတယ်(message):
 @bot.message_handler(commands=['BotServices'])
 def BotServices(message):
 	bot.reply_to(message, "Now, only support bot command &reply message.")
+
+
+
+
+
+
+
+@bot.message_handler(func=lambda message: True)
+def echo_all(message):
+	bot.reply_to(message, "Contact admin?")
+
 
 bot.infinity_polling()
