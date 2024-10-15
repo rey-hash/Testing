@@ -11,9 +11,9 @@ def start(message):
         bot.reply_to(message, "Welcome! How can I assist you today?")
         bot.send_message(message.chat.id, "Please select a option:", reply_markup=keyboard)
 
-keyboard.add.KeyboardButton('menu')
-keyboard.add.KeyboardButton('help')
-keyboard.add.KeyboardButton('info')
+keyboard.add(KeyboardButton('menu'))
+keyboard.add(KeyboardButton('help'))
+keyboard.add(KeyboardButton('info'))
 
 @bot.message_handler(commands=['settings'])
 def settings(message):
