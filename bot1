@@ -4,47 +4,30 @@ from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 
 bot = telebot.TeleBot("7610379849:AAFLiP_hqo5VMAJGD0qVE52V08AwHSbtWdY")
 
+keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
+
 @bot.message_handler(commands=['start','help'])
 def start(message): 
- bot.reply_to(message, "Welcome! How can I assist you today?,See in channel for avaliable command.")
-markup = ReplyKeyboardMarkup(resize_keyboard=True)
+        bot.reply_to(message, "Welcome! How can I assist you today?")
+        bot.send_message(message.chat.id, "Please select a option:", reply_markup=keyboard)
 
-
-button1 = KeyboardButton('Option 1')
-button2 = KeyboardButton('Option 2')
-button3 = KeyboardButton('Option 3')
-
-@bot.message_handler(func=lambda message: True)
-def handle_message(message):
-    if message.text == 'Option 1':
-        bot.send_message(message.chat.id, "You selected Option 1!")
-    elif message.text == 'Option 2':
-        bot.send_message(message.chat.id, "You selected Option 2!")
-    elif message.text == 'Option 3':
-        bot.send_message(message.chat.id, "You selected Option 3!")
-    else:
-        bot.send_message(message.chat.id, "Please select a valid option.")
-
-
-
-@bot.message_handler(commands=['info'])
-def info(message):
-	bot.reply_to(message, "This bot was created by @Ivanbgo on October 1,2024")
-
+keyboard.add.KeyboardButton('menu')
+keyboard.add.KeyboardButton('help')
+keyboard.add.KeyboardButton('info')
 
 @bot.message_handler(commands=['settings'])
 def settings(message):
-	bot.reply_to(message, "Here are the settings what you want to change")
+    bot.reply_to(message, "Here are the settings what you want to change")
 
 @bot.message_handler(commands=['change_language'])
 def change_language(message):
 	bot.reply_to(message, "This bot only support languages(English&Myanmar)")
 
-@bot.message_handler(commands=['Myanmar'/'myanmar'])
+@bot.message_handler(commands=['Myanmar','myanmar'])
 def Myanmar(message):
 	bot.reply_to(message, "Done! You haved changed language to Myanmar.မင်္ဂလာပါ၊ Bot မှကြိုဆိုပါတယ်။ ဘာများကူညီပေးရမလဲခင်ဗျ")
 
-@bot.message_handler(commands=['BotInfo'/'AboutBot'])
+@bot.message_handler(commands=['BotInfo','AboutBot'])
 def Botအကြောင်းသိချင်ပါတယ်(message):
 	bot.reply_to(message, "ယခု Bot အား Admin/Owner ***** မှ ဖန်တီးထားပြီး၊ အမျိုးမျိုးသော လုပ်ဆောင်ချက်များ လုပ်ဆောင်ရန် အကူအညီပေးခြင်း၊ လမ်းညွန်ပေးခြင်းများ၊ ကိုယ်ပိုင်လုပ်ငန်းများလုပ်ဆောင်နိုင်ရန်၊ Bot services များတစ်ချို့အားလည်း ပြန်လည်မျှဝေနိုင်ရန် ရည်ရွယ်ပါသည်။")
 
@@ -52,10 +35,23 @@ def Botအကြောင်းသိချင်ပါတယ်(message):
 def BotServices(message):
 	bot.reply_to(message, "Now, only support bot command &reply message.")
 
-
 @bot.message_handler(message=['subscribe'])
 def subscribe(message):
 	bot.reply_to(message, "https://t.me/+aKFy0yMQXSBlZWM1")
+
+
+@bot.message_handler(func=lambda message: True)
+def handle_message(message):
+    if 'menu' in message.text:
+        bot.reply_to(message.chat.id, "Please choose in option:")
+        
+    elif 'help' in message.text:
+        bot.reply_to(message.chat.id, "Please choose in option")
+        
+    elif 'info' in message.text:
+        bot.reply_to(message.chat.id, "Please choose in option")
+    else:
+        bot.reply_to(message, "Please choose a vail option")
 
 
 
