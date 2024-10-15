@@ -7,6 +7,25 @@ bot = telebot.TeleBot("7610379849:AAFLiP_hqo5VMAJGD0qVE52V08AwHSbtWdY")
 @bot.message_handler(commands=['start','help'])
 def start(message): 
  bot.reply_to(message, "Welcome! How can I assist you today?,See in channel for avaliable command.")
+markup = ReplyKeyboardMarkup(resize_keyboard=True)
+
+
+button1 = KeyboardButton('Option 1')
+    button2 = KeyboardButton('Option 2')
+    button3 = KeyboardButton('Option 3')
+
+@bot.message_handler(func=lambda message: True)
+def handle_message(message):
+    if message.text == 'Option 1':
+        bot.send_message(message.chat.id, "You selected Option 1!")
+    elif message.text == 'Option 2':
+        bot.send_message(message.chat.id, "You selected Option 2!")
+    elif message.text == 'Option 3':
+        bot.send_message(message.chat.id, "You selected Option 3!")
+    else:
+        bot.send_message(message.chat.id, "Please select a valid option.")
+
+
 
 @bot.message_handler(commands=['info'])
 def info(message):
@@ -41,9 +60,6 @@ def subscribe(message):
 
 
 
-@bot.message_handler(func=lambda message: True)
-def echo_all(message):
-	bot.reply_to(message, "Contact admin?")
 
 
 bot.infinity_polling()
