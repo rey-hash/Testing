@@ -7,7 +7,7 @@ bot = telebot.TeleBot("7610379849:AAFLiP_hqo5VMAJGD0qVE52V08AwHSbtWdY")
 keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
 
 @bot.message_handler(commands=['Start','Help'])
-def Start,Help(message): 
+def 'Start','Help'(message): 
         bot.send_message(message.chat.id, "Welcome! How can I assist you today?")
         bot.send_message(message.chat.id, "Please select a option:", reply_markup=keyboard)
         keyboard.add(KeyboardButton('Menu'))
